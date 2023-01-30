@@ -35,6 +35,7 @@ const OvalContainer = styled.div`
     padding-top: 5%
 `;
 const Oval = styled.div`
+
     box-sizing: border-box;
     position: absolute;
     width: 600px;
@@ -43,6 +44,9 @@ const Oval = styled.div`
     border: 0.5px solid #FFF2DF;
     border-radius: 146px;
     transform: rotate(-90deg);
+    @media (min-width: 768px) {
+        display: none;
+     }
 `;
 
 const WelcomeText = styled.h3`
@@ -51,12 +55,15 @@ const WelcomeText = styled.h3`
     padding: 0px 10px;
     color: #FFF2DF;
     text-align: center;
+    @media (min-width: 768px) {
+        font-size: 10rem;
+     }
 `;
 
 const ButtonContainer = styled.div`
     display: flex;
 `;
-const Button = styled.button`
+const Button = styled.a`
     width: 120px;
     height: 75px;
     z-index: 1;
@@ -66,6 +73,9 @@ const Button = styled.button`
     border-radius: 40px;
     font-size: 2rem;
     margin: -2rem auto 0 auto;
+    text-decoration: none;
+    line-height: 70px;
+    text-align: center;
 
     &:hover, &:focus {
         background-color: #161413;
@@ -77,6 +87,7 @@ const Button = styled.button`
 
 const clickEvent = () => {
  console.log('clicked!');
+ window.location='page_name.php'
 }
 
 const LandingPage = () => {
@@ -95,7 +106,7 @@ const LandingPage = () => {
                 
             </OvalContainer>
             <ButtonContainer>
-                <Button onClick={clickEvent}> →</Button>
+                <Button href="/about"> →</Button>
             </ButtonContainer>
             </div>
             
