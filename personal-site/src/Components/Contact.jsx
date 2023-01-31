@@ -20,6 +20,11 @@ const Overlay = styled.div`
     opacity: 0.5;
     background-color: #000000;
     z-index: 4;
+    @media (min-width: 768px) {
+        min-height: 100%;
+        position: fixed;
+    }
+
 `;
 
 const CloseButton = styled.div`
@@ -35,6 +40,10 @@ const ContactPanel = styled.div`
     border-radius: 30px;
     height: 459px;
     text-align: center;
+    @media (min-width: 768px) {
+        width: 50%;
+        margin: 0 0 0 25%;
+    }
 `;
 
 const ContactText = styled.h3`
