@@ -1,6 +1,40 @@
-# Getting Started with Create React App
+# Setting up Firebase for hosting
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Use node version `14.18.0`
+- run `npm install -g firebase-tools`
+- run `firebase init hosting` in root directory of project
+- Follow instructions in CLI
+
+- Visit [this page](https://github.com/settings/connections/applications/89cf50f02ac6aaed3484) to revoke authorisation for the Firebase CLI Github OAuth app
+
+# Deploying Firebase preview
+
+From the root of your local project directory, run the following command:
+
+`firebase hosting:channel:deploy CHANNEL_ID`
+
+Replace `CHANNEL_ID` with a name like `feature-name`
+The generated URL can be accessed by other devices and shared with others. 
+
+To update your preview URL with changes, run the same command again. Make sure to specify the same CHANNEL_ID in the command.
+
+# Deploying live
+
+- From any directory, run the following command:
+`firebase hosting:clone SOURCE_SITE_ID:SOURCE_CHANNEL_ID TARGET_SITE_ID:live`
+
+Replace each placeholder with the following:
+
+`SOURCE_SITE_ID` and `TARGET_SITE_ID`: These are the IDs of the Hosting sites that contain the channels.
+In my case, `personal-site-9e28d`
+
+For your default Hosting site, use your Firebase project ID.
+You can specify sites that are in the same Firebase project or even in different Firebase projects.
+`SOURCE_CHANNEL_ID`: This is the identifer for the channel that is currently serving the version you want to deploy to your live channel.
+
+For a live channel, use live as the channel ID.
+
+
 
 ## Available Scripts
 
